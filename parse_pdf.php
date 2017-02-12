@@ -34,8 +34,36 @@
 <?php
 include 'src/autoload.php';
 
-$uploaddir = '';
-$uploadfile = $uploaddir . basename($_FILES['userfile']['name']);
+$uploaddir = 'uploads/';
+
+// Check for upload attempt
+if(isset($_FILES['userfile'])){
+    //$newfile = $uploaddir.basename($_FILES['userfile']['name']);
+    $newfile = $uploaddir.basename($_FILES['userfile']['name']);
+
+    // If no error
+    if($_FILES['userfile']['error'] == 0){
+        //Attempt to move
+        if (move_uploaded_file($_FILES['userfile']['tmp_name'], $newfile)) {
+            echo "<div class='alert alert-success hidden-print' role='alert'>File was successfully uploaded.</div>";
+        }else{
+            echo "<div class='alert alert-danger hidden-print' role='alert'>Error moving file.</div>";
+        }
+    } else {
+        // Has error
+        $errors = array(
+            0=>"There is no error, the file uploaded with success",
+            1=>"The uploaded file exceeds the upload_max_filesize directive in php.ini",
+            2=>"The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in the HTML form",
+            3=>"The uploaded file was only partially uploaded",
+            4=>"No file was uploaded",
+            6=>"Missing a temporary folder"
+        );
+        echo "<div class='alert alert-danger hidden-print' role='alert'>Error: ".$errors[$_FILES['userfile']['error']] ."</div>";
+    }
+}
+
+$pdf_file = $uploaddir.basename($_FILES['userfile']['name']);
 
 function parse_pdf( $file ) {
 	$parser = new \Smalot\PdfParser\Parser();
@@ -79,8 +107,7 @@ function print_times( $array ) {
 	echo '</table>';
 	echo '</div>';
 }
-
-$pdf_text = parse_pdf( $uploadfile );
+$pdf_text = parse_pdf( $pdf_file );
 print_times( $pdf_text );
 
 ?>
