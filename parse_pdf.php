@@ -85,11 +85,11 @@ function parse_pdf( $file ) {
 function print_times( $array ) {
 	echo '<h2>' . $_FILES['userfile']['name'] . '</h2>';
 	echo '<div class="wrap">';
-	echo '<table>';
+	echo '<table class="table">';
 	echo '<thead>';
 	echo '<tr>';
-	echo '<th>Break Time</th>';
-	echo '<th>Break Length</th>';
+	echo '<th>Time</th>';
+	echo '<th>Length</th>';
 	echo '</tr>';
 	echo '</thead>';
 	echo '<tbody>';
