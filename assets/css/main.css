@@ -90,6 +90,9 @@ textarea {
    .table {
     font-size: 18px;
    }
+   .table th {
+    text-align: center;
+   }
    .loading {
     position: absolute;
     top: 0;
