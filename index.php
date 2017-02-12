@@ -26,7 +26,7 @@ $home_link = $host . '/movie-timings/index.php';
 	    		<div class="navbar-collapse">
 	    			<ul class="nav navbar-nav navbar-right">
 	    				<li>
-	    					<a href=<?php echo $host . "/movie-timings/index.php"?> >Home</a>
+	    					<a href=<?php echo "http://" . $host . "/movie-timings/index.php"?> >Home</a>
 	    				</li>
 	    			</ul>
 	    		</div> <!-- .navbar-collapse -->
