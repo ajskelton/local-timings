@@ -36,10 +36,10 @@
 
 			<form enctype="multipart/form-data" action="parse_pdf.php" method="POST">
 			    <!-- MAX_FILE_SIZE must precede the file input field -->
-			    <input type="hidden" name="MAX_FILE_SIZE" value="30000" />
+			    <input type="hidden" name="MAX_FILE_SIZE" value="300000" />
 			    <!-- Name of input element determines name in $_FILES array -->
 			    <div class="form-group">
-				    <input name="userfile" type="file" id="moviesInputFile"/>		    	
+				    <input name="userfile" type="file" id="moviesInputFile"/>    	
 			    </div>
 			    <button type="submit" class="btn btn-default"/>Send</button>
 			</form>
