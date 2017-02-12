@@ -46,8 +46,9 @@ $home_link = $host . '/movie-timings/index.php';
 			    <div class="form-group">
 				    <input name="userfile" type="file" id="moviesInputFile"/>    	
 			    </div>
-			    <button type="submit" class="btn btn-default"/>Send</button>
+			    <button type="submit" id="submit-button" class="btn btn-default"/>Send</button>
 			</form>
 		</div>
+        <script type="text/javascript" src="assets/js/loading.js"></script>
 	</body>
 </html>
