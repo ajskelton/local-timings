@@ -1,3 +1,9 @@
+<?php
+
+$host = $_SERVER['HTTP_HOST'];
+$home_link = $host . '/movie-timings/index.php';
+
+?>
 <!doctype html>
 <html class="no-js" lang="">
     <head>
@@ -20,7 +26,7 @@
 	    		<div class="navbar-collapse">
 	    			<ul class="nav navbar-nav navbar-right">
 	    				<li>
-	    					<a href="http://10.151.4.115/movie-timings/index.php">Home</a>
+	    					<a href=<?php echo $host . "/movie-timings/index.php"?> >Home</a>
 	    				</li>
 	    				<li>
 							<a href="javascript:window.print()">Print Page</a>

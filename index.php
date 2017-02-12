@@ -1,3 +1,9 @@
+<?php
+
+$host = $_SERVER['HTTP_HOST'];
+$home_link = $host . '/movie-timings/index.php';
+
+?>
 <!doctype html>
 <html class="no-js" lang="">
     <head>
@@ -20,14 +26,13 @@
 	    		<div class="navbar-collapse">
 	    			<ul class="nav navbar-nav navbar-right">
 	    				<li>
-	    					<a href="http://10.151.4.115/movie-timings/index.php">Home</a>
+	    					<a href=<?php echo $host . "/movie-timings/index.php"?> >Home</a>
 	    				</li>
 	    			</ul>
 	    		</div> <!-- .navbar-collapse -->
     		</div> <!-- .container -->
     	</nav>
     	<div class="container">
-    		
     		<h2>Movies! Affiliates Local Timings</h2>
     		<h3>Step 1: Get PDF of Days Final Timing</h3>
     		<a href="http://affiliates.moviestvnetwork.com/" target="_blank">Movies! Affiliates Dashboard</a>
