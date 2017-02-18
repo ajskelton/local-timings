@@ -2,7 +2,6 @@
 include_once('header.php');
 ?>
     	<div class="container">
-
 <?php
 include 'src/autoload.php';
 
@@ -91,4 +90,4 @@ function print_times( $array ) {
 $pdf_text = parse_pdf( $pdf_file );
 print_times( $pdf_text );
 
-?>
+include_once('footer.php');
