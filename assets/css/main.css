@@ -87,22 +87,23 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
-   .table {
-    font-size: 18px;
-   }
-   .table th {
-    text-align: center;
-   }
-   .loading {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: rgba(0,0,0,0.8);
-   }
 
-   .loader {
+.table {
+font-size: 18px;
+}
+.table th {
+text-align: center;
+}
+.loading {
+position: absolute;
+top: 0;
+bottom: 0;
+left: 0;
+right: 0;
+background-color: rgba(0,0,0,0.8);
+}
+
+.loader {
   margin: 30% auto;
   font-size: 25px;
   width: 1em;
@@ -171,6 +172,28 @@ textarea {
   }
 }
 
+table {
+    text-align: center;
+}
+thead {
+    border-bottom: 1px solid black;
+}
+.wrap {
+    -webkit-column-count: 4;
+    -moz-column-count: 4;
+    column-count: 4;
+    -webkit-column-rule: 1px solid black;
+    -moz-column-rule: 1px solid black;
+    column-rule: 1px solid black;
+}
+.button-wrap {
+    margin: 1em;
+    text-align: center;
+}
+button {
+    margin-right: 1em;
+    cursor: pointer;
+}
 
 
 
@@ -369,22 +392,4 @@ textarea {
     button {
         display: none;
     }
-}
-table {
-    text-align: center;
-}
-thead {
-    border-bottom: 1px solid black;
-}
-.wrap {
-    column-count: 4;
-    column-rule: 1px solid black;
-}
-.button-wrap {
-    margin: 1em;
-    text-align: center;
-}
-button {
-    margin-right: 1em;
-    cursor: pointer;
 }
