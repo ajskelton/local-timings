@@ -44,9 +44,8 @@ function parse_pdf( $file ) {
 	$pdf = $parser->parseFile($file);
 	$array = [];
 	$text = $pdf->getText();
-
-	$regex = "/LOCAL.*?([0-9]{1,2}:[0-9]{2}).*?[\*]{3}\s{0,50}([0-9]{1,2}:[0-9]{2}:[0-9]{2})\s(AM|PM|XM)/";
-	$return_value = preg_match_all($regex, $text, $array );
+	$regex = "/(LOCAL A|LOCAL\/).*?([0-9]{1,2}:[0-9]{2}).*?[\*]{3}\s{0,50}([0-9]{1,2}:[0-9]{2}:[0-9]{2})\s(AM|PM|XM)/";
+	preg_match_all($regex, $text, $array );
 	return $array;
 }
 
@@ -69,10 +68,10 @@ function print_times( $array ) {
 	for($i = 0; $i < count($array[0]); $i++){
 		echo '<tr>';
 		echo '<td>';
-		if($array[3][$i] == 'XM' ){
-			$array[3][$i] = 'AM';
+		if($array[4][$i] == 'XM' ){
+			$array[4][$i] = 'AM';
 		}
-		$time = \DateTime::createFromFormat('H:i:s A', $array[2][$i] . ' ' . $array[3][$i]);
+		$time = \DateTime::createFromFormat('H:i:s A', $array[3][$i] . ' ' . $array[4][$i]);
 		if($_POST['channel'] == 'movies' ) {
 			$time->modify("-3 hour");
 		} elseif($_POST['channel'] == 'me') {
@@ -82,7 +81,7 @@ function print_times( $array ) {
 		echo ($newTime);
 		echo '</td>';
 		echo '<td>';
-		echo ($array[1][$i]);
+		echo ($array[2][$i]);
 		echo '</td>';
 		echo '</tr>';
 	}
