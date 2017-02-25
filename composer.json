@@ -2,7 +2,7 @@
     "name" 			: "ajskelton/movies-local-timings",
     "description" 	: "Print out local timings from the Movies Affiliate PDF",
     "type"          : "project",
-    "keywords" 		: ["wordpress", "wp", "pdf", "php", "television"],
+    "keywords" 		: ["pdf", "php", "television"],
     "homepage" 		: "http://anthonyskelton.com/movies-local-timings",
     "license" 		: "GPL-2.0+",
     "authors": [
