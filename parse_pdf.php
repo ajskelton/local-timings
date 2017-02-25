@@ -20,4 +20,5 @@ check_upload_status( $uploaddir );
 $pdf_file = $uploaddir.basename($_FILES['userfile']['name']);
 $pdf_text = parse_pdf( $pdf_file );
 print_times( $pdf_text );
+close_container_div();
 include_once('footer.php');

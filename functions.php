@@ -56,18 +56,15 @@ function print_times( $array ) {
 	} elseif($_POST['channel'] == 'me') {
 		echo '<h3>MeTV Local Break Times</h3>';
 	}
-	echo '<div class="wrap">';
-	echo '<table class="table">';
-	echo '<thead>';
-	echo '<tr>';
-	echo '<th>Time</th>';
-	echo '<th>Length</th>';
-	echo '</tr>';
-	echo '</thead>';
-	echo '<tbody>';
+	echo '<section class="wrap">';
+	echo '<header>';
+	echo '<h3>Time</h3>';
+	echo '<h4>Length</h4>';
+	echo '</header>';
+	echo '<article>';
 	for($i = 0; $i < count($array[0]); $i++){
-		echo '<tr>';
-		echo '<td>';
+		echo '<div class="break-row">';
+		echo '<div class="break-time">';
 		if($array[2][$i] == 'XM' ){
 			$array[2][$i] = 'AM';
 		}
@@ -79,17 +76,21 @@ function print_times( $array ) {
 		}
 		$newTime = $time->format('G:i:s');
 		echo ($newTime);
-		echo '</td>';
-		echo '<td>';
+		echo '</div>';
+		echo '<div class="break-length">';
 		echo ($array[3][$i]);
-		echo '</td>';
-		echo '</tr>';
+		echo '</div>';
+		echo '</div>';
 	}
-	echo '</tbody>';
-	echo '</table>';
+	echo '</article>';
+	echo '</section>';
 	echo '</div>';
 }
 
 function open_container_div() {
 	echo '<div class="container">';
+}
+
+function close_container_div() {
+	echo '</div>';
 }
