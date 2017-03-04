@@ -44,7 +44,7 @@ function parse_pdf( $file ) {
 	$pdf = $parser->parseFile($file);
 	$array = [];
 	$text = $pdf->getText();
-	$regex = "/([0-9]{1,2}:[0-9]{2}:[0-9]{2})\s(AM|PM|XM)\s{0,1}\*{3}.*?LOCAL.*?([0-9]{1,2}:[0-9]{2})/";
+	$regex = "/([0-9]{1,2}:[0-9]{2}:[0-9]{2})\s(AM|PM|XM)\s{0,1}\*{3}\s{0,3}\*{1,2}LOCAL.*?([0-9]{1,2}:[0-9]{2})/";
 	preg_match_all($regex, $text, $array );
 	return $array;
 }
